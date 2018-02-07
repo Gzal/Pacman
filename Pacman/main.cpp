@@ -4,11 +4,13 @@
 
 // Here is a small helper for you! Have a look.
 #include "ResourcePath.hpp"
+#include "Constants.h"
 
 int main(int, char const**)
 {
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
+    sf::RenderWindow window(sf::VideoMode(consts::window_sz.x,
+                                          consts::window_sz.y), "Pacman");
 
     // Start the game loop
     while (window.isOpen())
@@ -23,7 +25,8 @@ int main(int, char const**)
             }
 
             // Escape pressed: exit
-            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
+            if (event.type == sf::Event::KeyPressed &&
+                event.key.code == sf::Keyboard::Escape) {
                 window.close();
             }
         }
