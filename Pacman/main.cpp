@@ -1,17 +1,20 @@
-
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
-// Here is a small helper for you! Have a look.
-#include "ResourcePath.hpp"
 #include "Constants.h"
+#include "Pacman.hpp"
 
 int main(int, char const**)
 {
     // Create the main window
     sf::RenderWindow window(sf::VideoMode(consts::window_sz.x,
                                           consts::window_sz.y), "Pacman");
-
+    
+    //Create Pacman object and load resources
+    Pacman pacman;
+    if(!pacman.loadResources())
+        return EXIT_FAILURE;
+    
     // Start the game loop
     while (window.isOpen())
     {
@@ -33,6 +36,9 @@ int main(int, char const**)
 
         // Clear screen
         window.clear();
+        
+        //Draw on the window
+        window.draw(pacman.sprite);
 
         // Update the window
         window.display();
