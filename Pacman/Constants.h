@@ -12,7 +12,7 @@
 #define Constants_h
 
 namespace consts {
-    sf::Vector2f window_sz{1024,1024};
+    sf::Vector2f const windowSize{1024, 1024};
 }
 
 #endif /* Constants_h */

@@ -7,8 +7,8 @@
 int main(int, char const**)
 {
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode(consts::window_sz.x,
-                                          consts::window_sz.y), "Pacman");
+    sf::RenderWindow window(sf::VideoMode(consts::windowSize.x,
+                                          consts::windowSize.y), "Pacman");
     
     //Create Pacman object and load resources
     Pacman pacman;
