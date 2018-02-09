@@ -37,6 +37,9 @@ int main(int, char const**)
         // Clear screen
         window.clear();
         
+        //Update Pacman object
+        pacman.update();
+        
         //Draw on the window
         window.draw(pacman.sprite);
 

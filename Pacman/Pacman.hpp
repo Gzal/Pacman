@@ -13,14 +13,22 @@
 
 class Pacman {
 private:
+    //Pacman size and speed constants
+    sf::Vector2u const size{64, 64};
+    float const speed{.5f};
+    //Member variables
+    sf::Vector2f position;
+    sf::Vector2f velocity;
     sf::Texture texture;
 public:
     sf::Sprite sprite;
-    
-    Pacman() = default;
+    //Sets Pamcan sprite on the center of the screen
+    Pacman();
     ~Pacman() = default;
-    
+    //Load textures from file and, if successful, sets it on sprite
     bool loadResources();
+    //Move Pacman sprite based on keyboard input
+    void update();
 };
 
 #endif /* Pacman_hpp */
