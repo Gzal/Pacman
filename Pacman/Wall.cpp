@@ -9,8 +9,10 @@
 #include "Wall.hpp"
 
 Wall::Wall() {
-    Wall::shape.setSize(sf::Vector2f(consts::windowSize.x - 128,
+    Wall::shape.setSize(sf::Vector2f(consts::windowSize.x -
+                                     2 * consts::windowMargin,
                                      Wall::width));
-    Wall::shape.setPosition(64, consts::windowSize.y - 64);
+    Wall::shape.setPosition(consts::windowMargin,
+                            consts::windowSize.y - consts::windowMargin);
     Wall::shape.setFillColor(sf::Color::White);
 }
