@@ -10,9 +10,13 @@
 #define Wall_hpp
 
 #include <SFML/Graphics.hpp>
+#include "Constants.h"
 
-Class wall {
-
-}
-
+class Wall {
+    int const width{4};
+public:
+    sf::RectangleShape shape;
+    Wall();
+    ~Wall() = default;
+};
 #endif /* Wall_hpp */
