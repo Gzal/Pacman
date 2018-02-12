@@ -16,7 +16,9 @@ class Wall {
     int const width{4};
 public:
     sf::RectangleShape shape;
-    Wall();
+    
+    Wall() = default;
+    Wall(sf::Vector2f &size, sf::Vector2f &position);
     ~Wall() = default;
 };
 #endif /* Wall_hpp */
