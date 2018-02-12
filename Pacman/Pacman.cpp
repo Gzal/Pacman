@@ -11,29 +11,29 @@
 #include "Constants.h"
 
 Pacman::Pacman() {
-    position.x = (consts::windowSize.x - Pacman::size.x) / 2;
-    position.y = (consts::windowSize.y - Pacman::size.y) / 2;
-    Pacman::sprite.setPosition(Pacman::position);
+    position.x = (consts::windowSize.x - size.x) / 2;
+    position.y = (consts::windowSize.y - size.y) / 2;
+    sprite.setPosition(position);
 }
 
 bool Pacman::loadResources() {
-    if(!Pacman::texture.loadFromFile(resourcePath() + "Pacman_Open.png"))
+    if(!texture.loadFromFile(resourcePath() + "Pacman_Open.png"))
         return false;
-    Pacman::sprite.setTexture(Pacman::texture);
+    sprite.setTexture(texture);
     return true;
 }
 
 void Pacman::update() {
-    Pacman::velocity = {0,0};
+    velocity = {0,0};
     
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
-        Pacman::velocity.y = -Pacman::speed;
+        velocity.y = -speed;
     else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
-        Pacman::velocity.y = Pacman::speed;
+        velocity.y = speed;
     else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
-        Pacman::velocity.x = -Pacman::speed;
+        velocity.x = -speed;
     else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
-        Pacman::velocity.x = Pacman::speed;
+        velocity.x = speed;
     
-    Pacman::sprite.move(velocity);
+    sprite.move(velocity);
 }

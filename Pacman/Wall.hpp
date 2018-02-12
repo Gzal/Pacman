@@ -18,7 +18,8 @@ public:
     sf::RectangleShape shape;
     
     Wall() = default;
-    Wall(sf::Vector2f &size, sf::Vector2f &position);
+    //Creates a wall of a given length and at a given position
+    Wall(int length, sf::Vector2f position);
     ~Wall() = default;
 };
 #endif /* Wall_hpp */
