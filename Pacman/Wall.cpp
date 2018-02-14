@@ -8,8 +8,8 @@
 
 #include "Wall.hpp"
 
-Wall::Wall(int length, sf::Vector2f position) {
-    shape.setSize(sf::Vector2f(width,length));
-    shape.setPosition(position);
+Wall::Wall(int length) {
+    shape.setSize(sf::Vector2f(length,width));
+    shape.setOrigin(shape.getSize().x / 2, shape.getSize().y / 2);
     shape.setFillColor(sf::Color::White);
 }

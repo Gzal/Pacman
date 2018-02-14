@@ -19,7 +19,7 @@ public:
     
     Wall() = default;
     //Creates a wall of a given length and at a given position
-    Wall(int length, sf::Vector2f position);
+    Wall(int length);
     ~Wall() = default;
 };
 #endif /* Wall_hpp */
