@@ -18,7 +18,8 @@ public:
     sf::RectangleShape shape;
     
     Wall() = default;
-    //Creates a wall of a given length and at a given position
+    //Creates a wall of a given length and a predetermined width and color.
+    //It also sets the origin to the middle of the wall.
     Wall(int length);
     ~Wall() = default;
 };

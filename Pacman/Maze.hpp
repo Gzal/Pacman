@@ -9,4 +9,16 @@
 #ifndef Maze_hpp
 #define Maze_hpp
 
+#include <vector>
+#include "Constants.h"
+#include "Wall.hpp"
+
+class Maze {
+public:
+    //Container for the boundary walls
+    std::vector<Wall> boundaries;
+    //Constructs the four boundary walls
+    Maze();
+    ~Maze() = default;
+};
 #endif /* Maze_hpp */
