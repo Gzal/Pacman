@@ -11,9 +11,8 @@
 #include "Constants.h"
 
 Pacman::Pacman() {
-    position.x = (consts::windowSize.x - size.x) / 2;
-    position.y = (consts::windowSize.y - size.y) / 2;
-    sprite.setPosition(position);
+    sprite.setOrigin(size.x / 2, size.y / 2);
+    sprite.setPosition(consts::windowSize.x / 2, consts::windowSize.y / 2);
 }
 
 bool Pacman::loadResources() {

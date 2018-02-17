@@ -17,7 +17,6 @@ private:
     sf::Vector2u const size{64, 64};
     float const speed{.5f};
     //Member variables
-    sf::Vector2f position;
     sf::Vector2f velocity;
     sf::Texture texture;
 public:
