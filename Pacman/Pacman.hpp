@@ -15,18 +15,21 @@
 
 class Pacman {
 private:
-    //Pacman size and speed constants
+    // Pacman size and speed constants
     sf::Vector2u const size{64, 64};
     float const speed{.5f};
-    //Member variables
+    
+    // Member variables
     sf::Vector2f velocity;
     sf::Texture texture;
 public:
     sf::Sprite sprite;
-    //Sets Pamcan sprite on the center of the screen
+    
+    // Sets Pamcan sprite on the center of the screen
     Pacman();
     ~Pacman() = default;
-    //Load textures from file and, if successful, sets it on sprite
+    
+    // Load textures from file and, if successful, sets it on sprite
     bool loadResources();
     // Update Pacman's sprite based on keyboard input and the environment
     void update(std::vector<Wall> &boundaries);

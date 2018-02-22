@@ -15,9 +15,9 @@
 
 class Maze {
 public:
-    //Container for the boundary walls
+    // Container for the boundary walls
     std::vector<Wall> boundaries;
-    //Constructs the four boundary walls
+    // Constructs the four boundary walls
     Maze();
     ~Maze() = default;
 };
