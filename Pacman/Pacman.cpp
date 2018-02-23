@@ -23,23 +23,26 @@ bool Pacman::loadResources() {
 }
     
 void Pacman::update(std::vector<Wall> &boundaries) {
-    velocity = {0,0};
-    
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
-        velocity.y = -speed;
-    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
-        velocity.y = speed;
-    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
-        velocity.x = -speed;
-    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
-        velocity.x = speed;
+    velocity = getVelocity();
     
     if(this->willCollideWith(boundaries))
        velocity = {0,0};
     
     sprite.move(velocity);
 }
-
+sf::Vector2f Pacman::getVelocity() {
+    
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
+        return {0, -speed};
+    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
+        return {0, speed};
+    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
+        return {-speed, 0};
+    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
+        return {speed, 0};
+    else
+        return {0,0};
+}
 bool Pacman::willCollideWith(std::vector<Wall> &b) {
     sf::FloatRect p{this->sprite.getGlobalBounds()};
     

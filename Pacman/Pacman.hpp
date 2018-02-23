@@ -34,6 +34,8 @@ public:
     // Update Pacman's sprite based on keyboard input and the environment
     void update(std::vector<Wall> &boundaries);
 private:
+    // Check user keyboard input and return the corresponding velocity
+    sf::Vector2f getVelocity();
     // Check whether a collision with the maze boundaries is to be expected
     // on the next frame based on the current velocity
     bool willCollideWith(std::vector<Wall> &b);
