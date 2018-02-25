@@ -9,23 +9,11 @@
 #ifndef Pacman_hpp
 #define Pacman_hpp
 
-#include <vector>
-#include <SFML/Graphics.hpp>
-#include "Wall.hpp"
+#include "Character.hpp"
 
-class Pacman {
-private:
-    // Pacman size and speed constants
-    sf::Vector2u const size{64, 64};
-    float const speed{.5f};
-    
-    // Member variables
-    sf::Vector2f velocity;
-    sf::Texture texture;
+class Pacman : public Character {
 public:
-    sf::Sprite sprite;
-    
-    // Sets Pamcan sprite on the center of the screen
+    // Constructor sets Pacman sprite on the center of the screen
     Pacman();
     ~Pacman() = default;
     
@@ -36,9 +24,6 @@ public:
 private:
     // Check user keyboard input and return the corresponding velocity
     sf::Vector2f getVelocity();
-    // Check whether a collision with the maze boundaries is to be expected
-    // on the next frame based on the current velocity
-    bool willCollideWith(std::vector<Wall> &b);
 };
 
 #endif /* Pacman_hpp */
