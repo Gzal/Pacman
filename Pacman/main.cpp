@@ -3,6 +3,7 @@
 
 #include "Constants.h"
 #include "Pacman.hpp"
+#include "Ghost.hpp"
 #include "Maze.hpp"
 
 int main(int, char const**)
@@ -14,6 +15,11 @@ int main(int, char const**)
     Pacman pacman;
     if(!pacman.loadResources())
         return EXIT_FAILURE;
+    
+    Ghost ghost;
+    if(!ghost.loadResources())
+        return EXIT_FAILURE;
+    
     // Create maze walls
     Maze maze;
     // Start the game loop
@@ -40,6 +46,7 @@ int main(int, char const**)
         pacman.update(maze.boundaries);
         // Draw on the window
         window.draw(pacman.sprite);
+        window.draw(ghost.sprite);
         for (auto wall : maze.boundaries)
             window.draw(wall.shape);
         // Update the window
