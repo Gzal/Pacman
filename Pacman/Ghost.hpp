@@ -10,7 +10,13 @@
 #define Ghost_hpp
 
 #include "Character.hpp"
+#include <random>
+
 class Ghost : public Character {
+    // Random number generator
+    std::mt19937 rng;
+    // 1-4 integer ditribution
+    std::uniform_int_distribution<std::mt19937::result_type> dist4{1,4};
 public:
     // Constructor sets Ghost sprite on the top left quarter of the screen
     Ghost();
@@ -18,6 +24,9 @@ public:
     
     // Load textures from file and, if successful, sets it on sprite
     bool loadResources();
+private:
+    // Randomly return a velocity vector in one of four directions 
+    sf::Vector2f getVelocity();
 };
 
 #endif /* Ghost_hpp */
