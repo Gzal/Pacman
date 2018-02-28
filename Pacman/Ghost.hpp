@@ -24,8 +24,11 @@ public:
     
     // Load textures from file and, if successful, sets it on sprite
     bool loadResources();
+    // Update Ghost's sprite so that it moves in a random direction every
+    // few frames
+    void update();
 private:
-    // Randomly return a velocity vector in one of four directions 
+    // Randomly return a velocity vector in one of four directions
     sf::Vector2f getVelocity();
 };
 

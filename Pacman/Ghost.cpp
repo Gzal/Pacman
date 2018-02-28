@@ -43,3 +43,9 @@ sf::Vector2f Ghost::getVelocity() {
             return sf::Vector2f{0,0};
     }
 }
+
+void Ghost::update() {
+    velocity = getVelocity();
+    
+    sprite.move(velocity);
+}
