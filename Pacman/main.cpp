@@ -11,6 +11,8 @@ int main(int, char const**)
     // Create the main window
     sf::RenderWindow window(sf::VideoMode(consts::windowSize.x,
                                           consts::windowSize.y), "Pacman");
+    window.setFramerateLimit(60);
+    
     // Create Pacman object and load resources
     Pacman pacman;
     if(!pacman.loadResources())

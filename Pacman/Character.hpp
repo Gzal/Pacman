@@ -17,7 +17,7 @@ class Character {
 protected:
     // Pacman size and speed constants
     sf::Vector2u const size{64, 64};
-    float const speed{.5f};
+    float const speed{3.0f};
     
     // Member variables
     sf::Vector2f velocity;
