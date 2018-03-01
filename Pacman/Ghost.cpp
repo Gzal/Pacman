@@ -45,7 +45,12 @@ sf::Vector2f Ghost::getVelocity() {
 }
 
 void Ghost::update() {
-    velocity = getVelocity();
+    if (frameCount < frameLimit)
+        frameCount++;
+    else {
+        frameCount = 0;
+        velocity = getVelocity();
+    }
     
     sprite.move(velocity);
 }

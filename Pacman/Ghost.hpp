@@ -17,6 +17,10 @@ class Ghost : public Character {
     std::mt19937 rng;
     // 1-4 integer ditribution
     std::uniform_int_distribution<std::mt19937::result_type> dist4{1,4};
+    // Frame counter to determine when to shift direction
+    int frameCount{0};
+    // Frame limit before shifting directions
+    int const frameLimit{60};
 public:
     // Constructor sets Ghost sprite on the top left quarter of the screen
     Ghost();
