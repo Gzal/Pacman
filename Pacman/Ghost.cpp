@@ -25,23 +25,33 @@ bool Ghost::loadResources() {
     return true;
 }
 
-sf::Vector2f Ghost::getVelocity() {
-    switch(dist4(rng)) {
-        // Up
-        case 1:
-            return sf::Vector2f{0,-speed};
-        // Right
-        case 2:
-            return sf::Vector2f{speed,0};
-        // Down
-        case 3:
-            return sf::Vector2f{0,speed};
-        // Left
-        case 4:
-            return sf::Vector2f{-speed,0};
-        default:
-            return sf::Vector2f{0,0};
-    }
+sf::Vector2f Ghost::getVelocity(sf::Vector2f const &avoid = {0,0}) {
+    sf::Vector2f chosen{0,0};
+    
+    do {
+        switch(dist4(rng)) {
+            // Up
+            case 1:
+                chosen = sf::Vector2f{0,-speed};
+                break;
+            // Right
+            case 2:
+                chosen = sf::Vector2f{speed,0};
+                break;
+            // Down
+            case 3:
+                chosen = sf::Vector2f{0,speed};
+                break;
+            // Left
+            case 4:
+                chosen = sf::Vector2f{-speed,0};
+                break;
+            default:
+                break;
+        }
+    } while (chosen == avoid);
+    
+    return chosen;
 }
 
 void Ghost::update() {

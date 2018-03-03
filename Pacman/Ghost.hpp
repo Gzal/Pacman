@@ -32,8 +32,9 @@ public:
     // few frames
     void update();
 private:
-    // Randomly return a velocity vector in one of four directions
-    sf::Vector2f getVelocity();
+    // Randomly return a velocity vector in one of four directions. If
+    // provided with an argument it will return a different vector.
+    sf::Vector2f getVelocity(sf::Vector2f const &);
 };
 
 #endif /* Ghost_hpp */
