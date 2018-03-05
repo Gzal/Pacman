@@ -30,7 +30,7 @@ public:
     bool loadResources();
     // Update Ghost's sprite so that it moves in a random direction every
     // few frames
-    void update();
+    void update(std::vector<Wall> &);
 private:
     // Randomly return a velocity vector in one of four directions. If
     // provided with an argument it will return a different vector.

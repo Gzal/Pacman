@@ -46,7 +46,7 @@ int main(int, char const**)
         window.clear();
         // Update Pacman object
         pacman.update(maze.boundaries);
-        ghost.update();
+        ghost.update(maze.boundaries);
         // Draw on the window
         window.draw(pacman.sprite);
         window.draw(ghost.sprite);
