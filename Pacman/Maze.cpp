@@ -17,14 +17,19 @@ Maze::Maze() {
     boundaries.push_back(dummy);
     // Right wall
     dummy.shape.setPosition(windowSize.x - windowMargin, windowSize.y / 2);
-    dummy.shape.rotate(90);
     boundaries.push_back(dummy);
     // Bottom wall
     dummy.shape.setPosition(windowSize.x / 2, windowSize.y - windowMargin);
-    dummy.shape.rotate(90);
     boundaries.push_back(dummy);
     // Left wall
     dummy.shape.setPosition(windowMargin, windowSize.y / 2);
-    dummy.shape.rotate(90);
     boundaries.push_back(dummy);
+
+    int n{0};
+
+    for(auto &wall : boundaries) {
+        wall.shape.rotate(n * 90);
+        wall.updateBounds();
+        n++;
+    }
 }

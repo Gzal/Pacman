@@ -13,3 +13,7 @@ Wall::Wall(int length) {
     shape.setOrigin(shape.getSize().x / 2, shape.getSize().y / 2);
     shape.setFillColor(sf::Color::White);
 }
+
+void Wall::updateBounds() {
+    bounds = shape.getGlobalBounds();
+}

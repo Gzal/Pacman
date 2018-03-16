@@ -11,8 +11,9 @@
 
 #include <SFML/Graphics.hpp>
 #include "Constants.h"
+#include "Collider.h"
 
-class Wall {
+class Wall : public Collider{
     int const width{4};
 public:
     sf::RectangleShape shape;
@@ -22,5 +23,6 @@ public:
     // It also sets the origin to the middle of the wall.
     Wall(int length);
     ~Wall() = default;
+    void updateBounds() override;
 };
 #endif /* Wall_hpp */
