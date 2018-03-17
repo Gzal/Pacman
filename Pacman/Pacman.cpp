@@ -29,6 +29,8 @@ void Pacman::update(std::vector<Wall> &boundaries) {
        velocity = {0,0};
     
     sprite.move(velocity);
+
+    updateBounds();
 }
 
 sf::Vector2f Pacman::getVelocity() {

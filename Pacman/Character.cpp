@@ -8,17 +8,17 @@
 
 #include "Character.hpp"
 
-bool Character::willCollideWith(std::vector<Wall> &b) {
-    sf::FloatRect p{this->sprite.getGlobalBounds()};
+void Character::updateBounds() {
+    bounds = sprite.getGlobalBounds();
+}
+
+bool Character::willCollideWith(std::vector<Wall> const &boundaries) {
+    sf::FloatRect expectedBounds = bounds;
+    expectedBounds.left += velocity.x;
+    expectedBounds.top += velocity.y;
     
-    p.left += velocity.x;
-    p.top += velocity.y;
-    
-    sf::FloatRect w;
-    
-    for(auto wall : b) {
-        sf::FloatRect w = wall.shape.getGlobalBounds();
-        if(p.intersects(w))
+    for(auto wall : boundaries) {
+        if(expectedBounds.intersects(wall.bounds))
             return true;
     }
     

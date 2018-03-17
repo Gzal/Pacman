@@ -10,10 +10,13 @@
 #define Character_hpp
 
 #include <vector>
+
 #include <SFML/Graphics.hpp>
+
+#include "Collider.h"
 #include "Wall.hpp"
 
-class Character {
+class Character : public Collider {
 protected:
     // Pacman size and speed constants
     sf::Vector2u const size{64, 64};
@@ -30,9 +33,10 @@ public:
     virtual ~Character() = default;
     
 protected:
+    void updateBounds() override;
     // Check whether a collision with the maze boundaries is to be expected
     // on the next frame based on the current velocity
-    bool willCollideWith(std::vector<Wall> &b);
+    bool willCollideWith(std::vector<Wall> const &boundaries);
 };
 
 

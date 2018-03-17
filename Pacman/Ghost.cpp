@@ -66,4 +66,6 @@ void Ghost::update(std::vector<Wall> &boundaries) {
         velocity = getVelocity(velocity);
     
     sprite.move(velocity);
+
+    updateBounds();
 }
